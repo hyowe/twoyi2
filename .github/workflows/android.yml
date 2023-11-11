@@ -67,7 +67,7 @@ jobs:
     - name: Setup NDK
       uses: nttld/setup-ndk@v1.4.1
       with:
-        ndk-version: r25c
+        ndk-version: r22b
         local-cache: true
     - name: Cargo Setup toolchain action to ${{ env.target }}
       uses: actions-rs/toolchain@v1.0.6
