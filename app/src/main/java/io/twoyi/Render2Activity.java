@@ -257,7 +257,7 @@ public class Render2Activity extends AppCompatActivity implements View.OnTouchLi
 
     @Override
     public void onBackPressed() {
-        // super.onBackPressed();
+        super.onBackPressed();
         Renderer.sendKeycode(KeyEvent.KEYCODE_HOME);
     }
 
