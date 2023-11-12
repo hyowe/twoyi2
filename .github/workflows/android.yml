@@ -67,7 +67,7 @@ jobs:
     - name: Setup NDK
       uses: nttld/setup-ndk@v1.4.1
       with:
-        ndk-version: r26b
+        ndk-version: r22b
         local-cache: true
     - name: Cargo Setup toolchain action to ${{ env.target }}
       uses: actions-rs/toolchain@v1.0.6
@@ -106,25 +106,16 @@ jobs:
         ./gradlew wrapper --gradle-version=8.1.1 --warning-mode=all
         ./gradlew --build-cache build -Prust-target=arm64
         ./gradlew --build-cache assembleRelease -Prust-target=arm64
-        ./gradlew --build-cache assembleDebug -Prust-target=arm64
     - name: Find Apk
       shell: bash {0}
       run: |
-        find ~/ -type d -name 'apk' | xargs -r -I@ find @ -type d -name 'debug' -print -quit | xargs -r -I@ find @ -type f -name '*.apk' | ( xargs -r -I@ echo 'DEBUGAPK=@' >> $GITHUB_ENV )
         find ~/ -type d -name 'apk' | xargs -r -I@ find @ -type d -name 'release' -print -quit | xargs -r -I@ find @ -type f -name '*.apk' | ( xargs -r -I@ echo 'RELEASEAPK=@' >> $GITHUB_ENV )
         . $GITHUB_ENV
-        [[ ! -n "${DEBUGAPK}" ]] && echo DEBUGAPK=/not-found >> $GITHUB_ENV
         [[ ! -n "${RELEASEAPK}" ]] && echo RELEASEAPK=/not-found >> $GITHUB_ENV
         . $GITHUB_ENV
-        echo DEBUGAPK=${DEBUGAPK}
         echo RELEASEAPK=${RELEASEAPK}
     - name: Build Artifacts Twoyi-release.apk
       uses: actions/upload-artifact@v3.1.3
       with:
         name: Twoyi.apk RELEASE
         path: ${{ env.RELEASEAPK }}
-    - name: Build Artifacts Twoyi-debug.apk
-      uses: actions/upload-artifact@v3.1.3
-      with:
-        name: Twoyi.apk DEBUG
-        path: ${{ env.DEBUGAPK }}
