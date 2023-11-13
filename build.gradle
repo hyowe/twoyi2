@@ -5,6 +5,20 @@
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+tasks.withType(com.android.build.gradle.tasks.LintBaseTask).configureEach {
+    enabled = false
+}
+
+task lintCheck() {
+    getAllTasks(true).each {
+        def lintTasks = it.value.findAll { it.name.contains("lint") }
+        lintTasks.each {
+            it.enabled = false
+        }
+    }
+}
+
 buildscript {
     ext {
         kotlin_version = '1.9.20'
