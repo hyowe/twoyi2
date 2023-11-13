@@ -32,7 +32,6 @@ jobs:
           !~/work/twoyi/twoyi/app/rs/src
           !~/work/twoyi/twoyi/app/rs/.*
           !~/work/twoyi/twoyi/app/rs/*.*
-          ~/work/twoyi/twoyi/app/lint-baseline.xml
           ~/work/twoyi/twoyi/app/src/main/assets/rootfs.7z
     - name: Download Rootfs from lastest Twoyi.apk release
       shell: bash {0}
