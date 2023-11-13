@@ -79,8 +79,8 @@ dependencies {
 
     // AboutPage
     implementation 'io.github.medyo:android-about-page:2.0.0'
-    implementation 'de.psdev.licensesdialog:licensesdialog:1.9.0'
-    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'de.psdev.licensesdialog:licensesdialog:2.2.0'
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
     implementation 'moe.feng:AlipayZeroSdk:1.1'
 
     implementation 'org.jdeferred:jdeferred-android-aar:1.2.6'
@@ -91,8 +91,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
     annotationProcessor 'androidx.annotation:annotation:1.7.0'
 
-    implementation 'org.apache.commons:commons-compress:1.21'
-    implementation 'org.tukaani:xz:1.5'
+    implementation 'org.apache.commons:commons-compress:1.24.0'
+    implementation 'org.tukaani:xz:1.9'
 
     implementation 'com.github.hzy3774:AndroidP7zip:1.7.2'
     implementation 'com.cleveroad:androidmanimation:0.9.1'
