@@ -70,7 +70,7 @@ jobs:
       uses: placintaalexandru/toolchain@v1.0.7
       with:
         toolchain: nightly
-        target: ${{ env.target }}
+        targets: ${{ env.target }}
         override: true
     - name: Rustup add ${{ env.target }} and Cargo install cargo-binstall
       shell: bash {0}
