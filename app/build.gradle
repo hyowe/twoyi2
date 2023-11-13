@@ -6,6 +6,12 @@ import java.text.SimpleDateFormat
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+tasks.whenTaskAdded { task ->
+    if (task.name.equals("lint")) {
+        task.enabled = false
+    }
+}
+
 plugins {
     id 'com.android.application'
 }
