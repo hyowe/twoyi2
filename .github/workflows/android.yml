@@ -36,15 +36,13 @@ jobs:
     - name: Download Rootfs from lastest Twoyi.apk release
       shell: bash {0}
       run: |
+        sudo apt update
+        sudo apt full-upgrade -y
+        sudo apt autoremove -y
         [ -f ./app/src/main/assets/rootfs.7z ] && exit 0
-        mkdir extracted-apk
-        cd extracted-apk
-        curl -s https://api.github.com/repos/twoyi/twoyi/releases/latest | grep "browser_download_url.*\.apk" | cut -d : -f 2,3 | tr -d \" | wget -qi -
-        unzip *.apk
-        [ ! -d ../app/src/main/assets/ ] && mkdir -p ../app/src/main/assets/
-        mv assets/* ../app/src/main/assets/
-        cd -
-        rm -rf extracted-apk
+        wget https://github.com/erhenjt/twoyi2/releases/download/0.7.5/rootfs.7z
+        sudo chmod 666 rootfs.7z
+        sudo mv rootfs.7z ../app/src/main/assets/
     - name: Update Grandle JVM Memory
       shell: bash {0}
       run: |
