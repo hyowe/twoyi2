@@ -80,7 +80,7 @@ jobs:
       run: |
         rustup target add ${{ env.target }}
         [ -f $HOME/.cargo/bin/cargo-binstall ] && exit 0
-        wget -q https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
+        wget -q https://github.com/cargo-bins/cargo-binstall/releases/download/v1.4.5/cargo-binstall-x86_64-unknown-linux-musl.tgz
         [ ! -d $HOME/.cargo/bin ] && mkdir -p $HOME/.cargo/bin
         tar -xf cargo-binstall-x86_64-unknown-linux-musl.tgz -C $HOME/.cargo/bin
         rm cargo-binstall-x86_64-unknown-linux-musl.tgz
@@ -103,7 +103,7 @@ jobs:
       run: |
         ./gradlew clean
         rm -rf ./app/build ./app/twoyi/build ./twoyi/app/build ./twoyi/build ~/app/build ~/work/app/build ~/work/app/twoyi/build ~/work/twoyi/build ~/work/twoyi/app/build ~/work/twoyi/twoyi/build 
-        ./gradlew wrapper --gradle-version=8.1.1 --warning-mode=all
+        ./gradlew wrapper --gradle-version=8.4 --warning-mode=all
         ./gradlew --build-cache build -x lintVitalRelease -x lint -Prust-target=arm64
         ./gradlew --build-cache assembleRelease -Prust-target=arm64
     - name: Find Apk
