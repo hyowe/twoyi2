@@ -67,7 +67,7 @@ jobs:
         ndk-version: r22b
         local-cache: true
     - name: Cargo Setup toolchain action to ${{ env.target }}
-      uses: actions-rs/toolchain@v1.0.6
+      uses: placintaalexandru/toolchain@v1.0.7
       with:
         toolchain: nightly
         target: ${{ env.target }}
@@ -85,7 +85,7 @@ jobs:
     - name: Cargo binstall cargo-update cross cargo-xdk
       run: cargo binstall ${{ env.binstall-args }} cargo-update cross cargo-xdk 
     #- name: Cargo Setup to ${{ env.target }}
-      #uses: actions-rs/cargo@v1.0.1
+      #uses: clechasseur/rs-cargo@v2.0.1
       #with:
          #use-cross: true
          #command: 
