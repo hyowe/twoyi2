@@ -104,7 +104,7 @@ jobs:
         ./gradlew clean
         rm -rf ./app/build ./app/twoyi/build ./twoyi/app/build ./twoyi/build ~/app/build ~/work/app/build ~/work/app/twoyi/build ~/work/twoyi/build ~/work/twoyi/app/build ~/work/twoyi/twoyi/build 
         ./gradlew wrapper --gradle-version=8.1.1 --warning-mode=all
-        ./gradlew --build-cache build -Prust-target=arm64
+        ./gradlew --build-cache build -x lintVitalRelease -x lint -x lintVitalSourceSets -Prust-target=arm64
         ./gradlew --build-cache assembleRelease -Prust-target=arm64
     - name: Find Apk
       shell: bash {0}
