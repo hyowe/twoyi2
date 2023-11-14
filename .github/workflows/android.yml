@@ -67,7 +67,7 @@ jobs:
         ndk-version: r26b
         local-cache: true
     - name: Cargo Setup toolchain action to ${{ env.target }}
-      uses: placintaalexandru/toolchain@v1.0.7
+      uses: crusty-pie/toolchain@v1.0.7
       with:
         toolchain: nightly
         targets: ${{ env.target }}
