@@ -35,6 +35,7 @@ android {
         applicationId "io.twoyi"
         compileSdk 34
         minSdkVersion 33
+        ndkVersion "26.1.10909125"
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 34
         versionCode 10354
@@ -43,7 +44,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
-            //noinspection ChromeOsAbiSupport
             abiFilters "arm64-v8a"
         }
         archivesBaseName = "twoyi_${versionName}"
@@ -71,8 +71,7 @@ android {
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.7.0-alpha03'
-//
-    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'com.google.android.material:material:1.11.0-beta01'
     implementation 'com.github.tiann:FreeReflection:3.2.0'
     implementation "com.github.topjohnwu.libsu:core:5.2.1"
 
