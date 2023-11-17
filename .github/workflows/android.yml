@@ -92,7 +92,10 @@ jobs:
          #args: --target ${{ env.target }} 
     - name: Cargo Update
       continue-on-error: true
-      run: cargo install-update -a
+      run: |
+        cargo install-update -a
+        cargo update
+        cargo update regex
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
