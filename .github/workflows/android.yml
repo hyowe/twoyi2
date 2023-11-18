@@ -94,6 +94,8 @@ jobs:
       continue-on-error: true
       run: |
         cargo install-update -a
+        cargo install cargo-edit
+        cargo upgrade
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
