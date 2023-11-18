@@ -96,7 +96,7 @@ jobs:
         cargo install-update -a
         cargo install cargo-edit
         cd ./app/rs/
-        cargo upgrade
+        cargo upgrade --incompatible
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
