@@ -88,7 +88,7 @@ dependencies {
 //
     testImplementation 'junit:junit:4.13.2'
 //
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:5.0.0-rc01'
     annotationProcessor 'androidx.annotation:annotation:1.7.0'
 
     implementation 'org.apache.commons:commons-compress:1.24.0'
@@ -97,7 +97,7 @@ dependencies {
     implementation 'com.github.hzy3774:AndroidP7zip:1.7.2'
     implementation 'com.cleveroad:androidmanimation:0.9.1'
 //
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.0-alpha01'
 //
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.0-alpha01'
 }
