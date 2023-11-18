@@ -95,9 +95,8 @@ jobs:
       run: |
         cargo install-update -a
         cargo install cargo-edit
-        pwd
+        cd ./app/rs/
         cargo upgrade
-        pwd
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
