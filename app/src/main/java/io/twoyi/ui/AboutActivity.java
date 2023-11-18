@@ -227,8 +227,6 @@ public class AboutActivity extends AppCompatActivity {
                 "Clans", new ApacheSoftwareLicense20()));
         notices.addNotice(new Notice("android-about-page", "https://github.com/medyo/android-about-page",
                 "Copyright (c) 2016 Mehdi Sakout", new MITLicense()));
-        notices.addNotice(new Notice("AlipayZeroSdk", "https://github.com/fython/AlipayZeroSdk",
-                "Copyright 2016 Fung Go (fython)", new ApacheSoftwareLicense20()));
         notices.addNotice(new Notice("Glide", "https://github.com/bumptech/glide",
                 "Copyright 2014 Google, Inc.", new BSD2ClauseLicense()));
         notices.addNotice(new Notice("Once", "https://github.com/jonfinerty/Once",
