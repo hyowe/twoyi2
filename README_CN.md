@@ -82,6 +82,11 @@ WIP
 
 PS. 请安装 ndk 22 或者更低版本，高版本可能无法编译成功。
 
+#### 自定义 ndk 和 jdk 路径
+
+1. export ANDROID_NDK_HOME=xxx/ndk/22.0.7026061
+2. export JAVA_HOME=xxx/android-studio/jbr (使用 Android Studio 的 jdk，或者设置成你本地的)
+
 ### 集成 rootfs
 
 两仪的 ROM 正在开源中，目前还无法从源码编译；不过可以使用预编译的 ROM。
@@ -90,7 +95,17 @@ PS. 请安装 ndk 22 或者更低版本，高版本可能无法编译成功。
 
 ### 使用 Android Studio 编译
 
-直接使用 Android Studio 编译即可。
+1. Build libtwoyi.so.
+
+```
+cd app/rs
+cargo xdk -t arm64-v8a -o ../src/main/jniLibs build --release
+```
+2. Build apk with Android Studio normally.
+
+libadb.so https://github.com/tytydraco/LADB
+libloader.so 这个应该也是从 AOSP 编译的。
+libOpenglRender.so 是从 AOSP 编译的。
 
 ## 讨论
 
