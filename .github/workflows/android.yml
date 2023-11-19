@@ -95,6 +95,7 @@ jobs:
       run: |
         cargo install-update -a
         cargo install cargo-edit
+        rm -f ./app/src/main/jniLibs/arm64-v8a/libtwoyi.so
         cd ./app/rs/
         cargo upgrade --incompatible
         cargo update
